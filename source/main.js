@@ -34,9 +34,9 @@
                 return;
             }
             if (ich[name]) {
-                console.error("Invalid name: " + name + ".");
+                console.error('Bad name: "' + name + '"');
             } else if (ich.templates[name]) {
-                console.error("Template \"" + name + "  \" exists");
+                console.error('Redefine: "' + name + '"');
             } else {
                 ich.templates[name] = templateString;
                 ich[name] = function (data, raw) {
