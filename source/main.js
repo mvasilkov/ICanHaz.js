@@ -18,6 +18,9 @@
         // grab jquery or zepto if it's there
         $: (typeof window !== 'undefined') ? window.jQuery || window.Zepto || null : null,
 
+        // grab mustache from require.js (if any) or global var
+        mustache: Mustache || (typeof require === 'function'? require('mustache'): null),
+
         // public function for adding templates
         // can take a name and template string arguments
         // or can take an object with name/template pairs
@@ -38,7 +41,7 @@
                 ich.templates[name] = templateString;
                 ich[name] = function (data, raw) {
                     data = data || {};
-                    var result = Mustache.to_html(ich.templates[name], data, ich.templates);
+                    var result = ich.mustache.to_html(ich.templates[name], data, ich.templates);
                     return (ich.$ && !raw) ? ich.$(result) : result;
                 };
             }
