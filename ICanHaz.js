@@ -1,5 +1,5 @@
 /*!
-ICanHaz.js version 0.10.1 -- by @HenrikJoreteg
+ICanHaz.js version 0.10.1p1 -- by @HenrikJoreteg
 More info at: http://icanhazjs.com
 */
 (function () {
@@ -453,7 +453,7 @@ var Mustache = function () {
     var root = this;
 
     var ich = {
-        VERSION: "0.10.1",
+        VERSION: "0.10.1p1",
         templates: {},
 
         // grab jquery or zepto if it's there
